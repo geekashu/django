@@ -1874,9 +1874,9 @@ class InlineModelAdmin(BaseModelAdmin):
             class DeleteProtectedModelForm(base_model_form):
                 def __init__(self, *args, **kwargs):
                     super(DeleteProtectedModelForm, self).__init__(*args, **kwargs)
-                    if not can_change and self.instance.id:
+                    if not can_change and self.instance.pk:
                         self.fields = {}
-                    if not can_add and not self.instance.id:
+                    if not can_add and not self.instance.pk:
                         self.fields = {}
 
                 def hand_clean_DELETE(self):

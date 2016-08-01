@@ -242,6 +242,13 @@ class BasicExtractorTests(ExtractorTests):
         self.assertIn("UnicodeDecodeError: skipped file not_utf8.txt in .",
                       force_text(out.getvalue()))
 
+    def test_unicode_file_name(self):
+        os.chdir(self.test_dir)
+        unicode_path = os.path.join(self.test_dir, 'vidéo.txt')
+        open(unicode_path, 'a').close()
+        self.addCleanup(self.rmfile, unicode_path)
+        management.call_command('makemessages', locale=[LOCALE], verbosity=0)
+
     def test_extraction_warning(self):
         """test xgettext warning about multiple bare interpolation placeholders"""
         os.chdir(self.test_dir)

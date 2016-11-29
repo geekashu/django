@@ -1,10 +1,10 @@
-==========================
-Django 1.9.8 release notes
-==========================
+===========================
+Django 1.8.14 release notes
+===========================
 
 *July 18, 2016*
 
-Django 1.9.8 fixes a security issue and several bugs in 1.9.7.
+Django 1.8.14 fixes a security issue and a bug in 1.8.13.
 
 XSS in admin's add/change related popup
 =======================================
@@ -23,6 +23,3 @@ Bugfixes
 * Fixed missing ``varchar/text_pattern_ops`` index on ``CharField`` and
   ``TextField`` respectively when using ``AddField`` on PostgreSQL
   (:ticket:`26889`).
-
-* Fixed ``makemessages`` crash on Python 2 with non-ASCII file names
-  (:ticket:`26897`).
